@@ -3,7 +3,7 @@ require('dotenv').config()
 
 const express = require('express')
 const mongoose = require('mongoose')
-const nomiecognomiRoutes = require('./routes/nomiecognomi')
+const personeRoutes = require('./routes/persone')
 
 // express app
 
@@ -22,7 +22,7 @@ app.use(express.json())
 
 // routes
 
-app.use('/api/nomiecognomi', nomiecognomiRoutes)
+app.use('/api/persone', personeRoutes)
 
 // connect to db
 

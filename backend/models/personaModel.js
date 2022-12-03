@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const nomeecognomeSchema = new Schema({
+const personaSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -28,5 +28,5 @@ const nomeecognomeSchema = new Schema({
 }, { timestamps: true })
 
 
-module.exports = mongoose.model('Nomeecognome', nomeecognomeSchema)
+module.exports = mongoose.model('Persona', personaSchema)
 
