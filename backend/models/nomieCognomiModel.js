@@ -3,24 +3,27 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const nomeecognomeSchema = new Schema({
-    Name: {
+    name: {
         type: String,
         required: true
     },
-    Name2: {
+    name2: {
         type: String
     },
-    Surname: {
+    surname: {
         type: String,
         required: true
     },
-    Category: {
-        type: String,
+    category: {
+        type: [String],
         required:true
     },
-    Rating: {
+    rating: {
         type: Number,
         required: true
+    },
+    comment:{
+        type: String
     }
 }, { timestamps: true })
 

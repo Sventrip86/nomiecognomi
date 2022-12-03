@@ -1,4 +1,5 @@
 const express = require('express')
+const nomieCognomiModel = require('../models/nomieCognomiModel')
 
 
 const router = express.Router()
@@ -19,6 +20,7 @@ router.get('/:id', (req, res) => {
 // POST  un nuovo nome e cognome
 
 router.post('/', (req, res) => {
+    const {name, surname, category, rating, comment } = req.body
     res.json({mssg:'POST un nuovo nome e cognome'})
 })
 
