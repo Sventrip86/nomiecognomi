@@ -1,5 +1,5 @@
 const express = require('express')
-const nomieCognomiModel = require('../models/nomieCognomiModel')
+const NomieCognomi = require('../models/nomieCognomiModel')
 
 
 const router = express.Router()
@@ -19,8 +19,15 @@ router.get('/:id', (req, res) => {
 
 // POST  un nuovo nome e cognome
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const {name, surname, category, rating, comment } = req.body
+
+    try {
+        const nomiecognomi = await NomieCognomi.create({name, surname, category, rating, comment})
+        res.status(200).json(nomiecognomi)
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
     res.json({mssg:'POST un nuovo nome e cognome'})
 })
 
