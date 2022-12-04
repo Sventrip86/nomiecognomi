@@ -1,5 +1,7 @@
 const express = require('express')
 const { createPersona,
+    getPersona,
+    getPersone
 } = require('../controllers/personeController')
 
 
@@ -8,15 +10,11 @@ const router = express.Router()
 
 //GET ALL NOMI E COGNOMI
 
-router.get('/', (req, res) => {
-    res.json({mssg:'GET all nomi e cognomi'})
-})
+router.get('/', getPersone)
 
 // GET single persona
 
-router.get('/:id', (req, res) => {
-    res.json({mssg:'GET un nome e cognome'})
-})
+router.get('/:id', getPersona)
 
 
 // POST  new persona

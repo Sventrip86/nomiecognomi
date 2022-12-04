@@ -1,12 +1,32 @@
+const  mongoose  = require('mongoose')
 const Persone = require('../models/personaModel')
 
 // get all 
+
+const getPersone = async (req, res) => {
+    const persone = await Persone.find().limit(20)
+
+    res.status(200).json(persone)
+}
 
 
 
 // get one
 
+const getPersona = async (req,res) => {
+    const { id } = req.params
 
+    if(!mongoose.Types.ObjectId().isValid(id)) {
+        return res.status(404).json({error: 'no persona found, invalid id'})
+    }
+
+    const persona = await Persone.findById(id )
+
+    if(!persona){
+        res.status(400).json({error : 'no persona found'})
+    }
+    res.status(200).json(persona)
+}
 // create one
 
 
@@ -29,5 +49,7 @@ const createPersona = async (req, res) => {
 
 
 module.exports =   {
+    getPersone,
+    getPersona,
     createPersona
 }

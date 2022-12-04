@@ -23,7 +23,7 @@ const personaSchema = new Schema({
         required: true
     },
     comment:{
-        type: String
+        type: [String]
     }
 }, { timestamps: true })
 
