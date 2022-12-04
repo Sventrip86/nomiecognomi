@@ -80,6 +80,7 @@ const PersonaForm = () => {
                 value={comment}
             />
             <button> invia </button>
+            { error && <div className="error">{error} </div>}
 
         </form>
     )
