@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 //components
 
 import PersonaDetails from '../components/PersonaDetails'
+import PersonaForm from '../components/PersonaForm'
 
 const Home = () => {
     
@@ -32,6 +33,7 @@ const Home = () => {
                 )
                 )}
             </div>
+            <PersonaForm/>
         </div>
     )
 }
