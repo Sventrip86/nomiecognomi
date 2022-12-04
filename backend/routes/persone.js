@@ -1,7 +1,9 @@
 const express = require('express')
 const { createPersona,
     getPersona,
-    getPersone
+    getPersone,
+    deletePersona,
+    updatePersona
 } = require('../controllers/personeController')
 
 
@@ -23,15 +25,11 @@ router.post('/', createPersona)
 
 //DELETE one persona
 
-router.delete('/:id', (req, res) => {
-    res.json({mssg:'DELETE one'})
-})
+router.delete('/:id', deletePersona)
 
 // UPDATE 
 
-router.patch('/:id', (req, res) => {
-    res.json({mssg:'UPDATE one'})
-})
+router.patch('/:id', updatePersona)
 
 
 module.exports = router
